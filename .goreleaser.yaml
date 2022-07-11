@@ -170,7 +170,6 @@ brews:
       zsh_completion.install "completions/goreleaser.zsh" => "_goreleaser"
       fish_completion.install "completions/goreleaser.fish"
       man1.install "manpages/goreleaser.1.gz"
-
 aurs:
   - homepage:  https://goreleaser.com
     description: Deliver Go binaries as fast and easily as possible
@@ -183,10 +182,8 @@ aurs:
     package: |-
       # bin
       install -Dm755 "./goreleaser" "${pkgdir}/usr/bin/goreleaser"
-
       # license
       install -Dm644 "./LICENSE.md" "${pkgdir}/usr/share/licenses/goreleaser/LICENSE"
-
       # completions
       mkdir -p "${pkgdir}/usr/share/bash-completion/completions/"
       mkdir -p "${pkgdir}/usr/share/zsh/site-functions/"
@@ -194,10 +191,8 @@ aurs:
       install -Dm644 "./completions/goreleaser.bash" "${pkgdir}/usr/share/bash-completion/completions/goreleaser"
       install -Dm644 "./completions/goreleaser.zsh" "${pkgdir}/usr/share/zsh/site-functions/_goreleaser"
       install -Dm644 "./completions/goreleaser.fish" "${pkgdir}/usr/share/fish/vendor_completions.d/goreleaser.fish"
-
       # man pages
       install -Dm644 "./manpages/goreleaser.1.gz" "${pkgdir}/usr/share/man/man1/goreleaser.1.gz"
-
 scoop:
   bucket:
     owner: goreleaser
@@ -304,14 +299,11 @@ milestones:
 release:
   footer: |
     **Full Changelog**: https://github.com/goreleaser/goreleaser/compare/{{ .PreviousTag }}...{{ .Tag }}
-
     ## What to do next?
-
     - Read the [documentation](https://goreleaser.com/intro/)
     - Check out the [GoReleaser Pro](https://goreleaser.com/pro) distribution
     - Join our [Discord server](https://discord.gg/RGEBtg8vQ6)
     - Follow us on [Twitter](https://twitter.com/goreleaser)
-
 announce:
   twitter:
     enabled: true
